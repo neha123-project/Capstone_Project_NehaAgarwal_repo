@@ -382,18 +382,10 @@ findings = {
 }
 }
 
-
+# Download the required data in json format 
 with open("findings.json", "w") as f:
-    json.dump(findings, f)
+    json.dump(findings, f, indent=4)
 
 from google.colab import files
 
 files.download('findings.json')
-
-# Task 1 — narrator/findings.json
-import json
-
-with open("findings.json", "r") as f:
-    findings = json.load(f)
-
-print(json.dumps(findings, indent=4))
